@@ -2,31 +2,39 @@
 
 # JavaScript30
 
-Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
+This is my take on the JavaScript 30 Day Challenge. I'll be checking these out as I build them.
 
-Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
+- [ ] [JavaScript Drum Kit](./01 - JavaScript Drum Kit/index.html)
+- [ ] [JS and CSS Clock](./02 - JS and CSS Clock/index.html)
+- [ ] [CSS Variables](./03 - CSS Variables/index.html)
+- [ ] [Array Cardio Day 1](./04 - Array Cardio Day 1/index.html)
+- [ ] [Flex Panel Gallery](./05 - Flex Panel Gallery/index.html)
+- [ ] [Type Ahead](./06 - Type Ahead/index.html)
+- [ ] [Array Cardio Day 2](./07 - Array Cardio Day 2/index.html)
+- [ ] [Fun with HTML5 Canvas](./08 - Fun with HTML5 Canvas/index.html)
+- [ ] [Dev Tools Domination](./09 - Dev Tools Domination/index.html)
+- [ ] [Hold Shift and Check Checkboxes](./10 - Hold Shift and Check Checkboxes/index.html)
+- [ ] [Custom Video Player](./11 - Custom Video Player/index.html)
+- [ ] [Key Sequence Detection](./12 - Key Sequence Detection/index.html)
+- [ ] [Slide in on Scroll](./13 - Slide in on Scroll/index.html)
+- [ ] [JavaScript References VS Copying](./14 - JavaScript References VS Copying/index.html)
+- [ ] [LocalStorage](./15 - LocalStorage/index.html)
+- [ ] [Mouse Move Shadow](./16 - Mouse Move Shadow/index.html)
+- [ ] [Sort Without Articles](./17 - Sort Without Articles/index.html)
+- [ ] [Adding Up Times with Reduce](./18 - Adding Up Times with Reduce/index.html)
+- [ ] [Webcam Fun](./19 - Webcam Fun/index.html)
+- [ ] [Speech Detection](./20 - Speech Detection/index.html)
+- [ ] [Geolocation](./21 - Geolocation/index.html)
+- [ ] [Follow Along Link Highlighter](./22 - Follow Along Link Highlighter/index.html)
+- [ ] [Speech Synthesis](./23 - Speech Synthesis/index.html)
+- [ ] [Sticky Nav](./24 - Sticky Nav/index.html)
+- [ ] [Event Capture, Propagation, Bubbling and Once](./25 - Event Capture, Propagation, Bubbling and Once/index.html)
+- [ ] [Stripe Follow Along Nav](./26 - Stripe Follow Along Nav/index.html)
+- [ ] [Click and Drag](./27 - Click and Drag/index.html)
+- [ ] [Video Speed Controller](./28 - Video Speed Controller/index.html)
+- [ ] [Countdown Timer](./29 - Countdown Timer/index.html)
+- [ ] [Whack A Mole](./30 - Whack A Mole/index.html)
 
-## Community #JavaScript30 Content
+## Credit
 
-Feel free to submit a PR adding a link to your own recaps, guides or reviews!
-
-* [Arjun Khode’s blog](http://thesagittariusme.blogspot.com/search/label/JS30) about summaries for each day, including fixed glitches, bugs and extra features
-* [Nitish Dayal's Text Guides](https://github.com/nitishdayal/JavaScript30) are great for those who like reading over watching
-* [Meredith Underell's](http://blog.meredithunderell.com/tag/javascript30/) Quick Lessons Learned
-* [Rowan Weismiller's](http://rowanweismiller.com/blog/javascript-30/) Recaps + Lessons Learned
-* [Thorsten Frommen](https://tfrommen.de/tag/javascript-30/) shares how he solved the exercises before viewing the answers
-* [Soyaine 写的中文指南](https://github.com/soyaine/JavaScript30)包含了过程记录和难点解释
-* [Ayo Isaiah's](https://freshman.tech/archive/#javascript30) Recaps and Lessons Learned
-* [Adriana Rios](https://stpcollabr8nlstn.github.io/JavaScript30/) shares her alternative solutions
-* [Michael Einsohn](http://30daysofjs.michaeleinsohn.com) publishes each challenge after watching the video once
-* [Mike Ekkel](https://medium.com/@mike_ekkel/javascript-30-a-30-day-vanilla-js-challenge-6a733fc9f62c#.9frjtaje9)
-* [Akinjide Bankole](https://github.com/akinjide/JS30days) used Node.js with [Jade](http://jadelang.net) to solve the exercises
-* [Yusef Habib](https://github.com/yhabib/JavaScript30) lessons and tricks learned, and a [gh-page](https://yhabib.github.io/JavaScript30/) to see working all the mini-projects.
-
-## A note on Pull Requests
-
-These are meant to be 1:1 copies of what is done in the video. If you found a better / different way to do things, great, but I will be keeping them the same as the videos.
-
-The starter files + solutions will be updated if/when the videos are updated.
-
-Thanks!
+This is a fork of Wes Bos's 30 Day JavaScript Challenge, original [README](https://github.com/wesbos/JavaScript30)
