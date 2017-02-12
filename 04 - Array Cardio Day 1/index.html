@@ -78,6 +78,9 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const getLastName = p => p.split(', ')[0]
+    const sortPeople = people.sort((p1, p2) => getLastName(p1) < getLastName(p2) ? -1 : 1)
+    console.log(sortPeople)
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
