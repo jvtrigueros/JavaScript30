@@ -7,7 +7,7 @@ This is my take on the JavaScript 30 Day Challenge. I'll be checking these out a
 - [x] [JavaScript Drum Kit](./01 - JavaScript Drum Kit/index.html)
 - [x] [JS and CSS Clock](./02 - JS and CSS Clock/index.html)
 - [x] [CSS Variables](./03 - CSS Variables/index.html)
-- [ ] [Array Cardio Day 1](./04 - Array Cardio Day 1/index.html)
+- [x] [Array Cardio Day 1](./04 - Array Cardio Day 1/index.html)
 - [ ] [Flex Panel Gallery](./05 - Flex Panel Gallery/index.html)
 - [ ] [Type Ahead](./06 - Type Ahead/index.html)
 - [ ] [Array Cardio Day 2](./07 - Array Cardio Day 2/index.html)
