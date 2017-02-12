@@ -56,7 +56,7 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    // Without converting NodeListto Array
+    // Without converting NodeList to Array
     /*
     const boulevards = []
     const groups = document.querySelectorAll('.mw-category-group')
@@ -85,7 +85,12 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const reduceVehicles = data.reduce((vehicles, vehicle) => {
+      vehicles[vehicle] = vehicles[vehicle] ? vehicles[vehicle] + 1 : 1
+      return vehicles
+    }, {})
 
+    console.log(reduceVehicles)
   </script>
 </body>
 </html>
