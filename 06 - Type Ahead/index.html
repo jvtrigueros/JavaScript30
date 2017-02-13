@@ -22,7 +22,12 @@
     .then(response => response.json())
     .then(data => cities.push(...data))
 
-
+  function findMatches(input, cities) {
+    return cities.filter(city => {
+      const match = new RegExp(input, 'gi')
+      return match.test(city.city)
+    })
+  }
 </script>
   </body>
 </html>
