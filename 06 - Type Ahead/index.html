@@ -24,10 +24,37 @@
 
   function findMatches(input, cities) {
     return cities.filter(city => {
-      const match = new RegExp(input, 'gi')
-      return match.test(city.city)
+      const regex = new RegExp(input, 'gi')
+      return city.city.match(regex) || city.state.match(regex)
     })
   }
+
+  function numberWithCommas(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
+
+  function displayMatches() {
+    const matches = findMatches(this.value, cities)
+
+    const html = matches.map(match => {
+      const regex = new RegExp(this.value, 'gi')
+      const cityName = match.city.replace(regex, `<span class="hl">${this.value}</span>`)
+      const stateName = match.state.replace(regex, `<span class="hl">${this.value}</span>`)
+      return `
+        <li>
+          <span class="name">${cityName}, ${stateName}</span>
+          <span class="popuplation">${numberWithCommas(match.population)}</span>
+        </li>
+      `
+    }).join('')
+    suggestions.innerHTML = html
+  }
+
+  const searchInput = document.querySelector('.search')
+  const suggestions = document.querySelector('.suggestions')
+
+  searchInput.addEventListener('change', displayMatches)
+  searchInput.addEventListener('keyup', displayMatches)
 </script>
   </body>
 </html>
