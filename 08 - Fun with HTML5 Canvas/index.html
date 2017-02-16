@@ -23,10 +23,21 @@ let lastY = 0
 function draw(e) {
   if(!isDrawing) return
   console.log(e)
+
+  ctx.beginPath()
+  ctx.moveTo(lastX, lastY)
+  ctx.lineTo(e.offsetX, e.offsetY)
+  ctx.stroke()
+  lastX = e.offsetX
+  lastY = e.offsetY
 }
 
 document.addEventListener('mousemove', draw)
-document.addEventListener('mousedown', () => isDrawing = true)
+document.addEventListener('mousedown', (e) => {
+  isDrawing = true
+  lastX = e.offsetX
+  lastY = e.offsetY
+})
 document.addEventListener('mouseup', () => isDrawing = false)
 document.addEventListener('mouseout', () => isDrawing = false)
 
