@@ -10,7 +10,7 @@ This is my take on the JavaScript 30 Day Challenge. I'll be checking these out a
 - [x] [Array Cardio Day 1](./04 - Array Cardio Day 1/index.html)
 - [x] [Flex Panel Gallery](./05 - Flex Panel Gallery/index.html)
 - [x] [Type Ahead](./06 - Type Ahead/index.html)
-- [ ] [Array Cardio Day 2](./07 - Array Cardio Day 2/index.html)
+- [x] [Array Cardio Day 2](./07 - Array Cardio Day 2/index.html)
 - [ ] [Fun with HTML5 Canvas](./08 - Fun with HTML5 Canvas/index.html)
 - [ ] [Dev Tools Domination](./09 - Dev Tools Domination/index.html)
 - [ ] [Hold Shift and Check Checkboxes](./10 - Hold Shift and Check Checkboxes/index.html)
