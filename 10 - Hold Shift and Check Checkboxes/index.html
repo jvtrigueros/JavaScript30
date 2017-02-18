@@ -104,6 +104,17 @@
   </div>
 
 <script>
+  const inputs = Array.from(document.querySelectorAll('input'))
+  let isMultiSelect = false
+
+  document.addEventListener('keydown', event => isMultiSelect = event.shiftKey ? true : isMultiSelect)
+  document.addEventListener('keyup', event => isMultiSelect = event.which === 16 ? false : isMultiSelect)
+
+  inputs.forEach(input => {
+    input.addEventListener('mousedown', event => {
+      const checkedInputs = inputs.filter(input => input.checked)
+    })
+  })
 </script>
 </body>
 </html>
