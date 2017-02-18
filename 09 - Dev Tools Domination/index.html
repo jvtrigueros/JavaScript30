@@ -18,28 +18,63 @@
     }
 
     // Regular
+    console.log('cheese')
 
     // Interpolated
+    console.log('%s', 'cheese')
 
     // Styled
+    console.log('%c cheese', 'color: yellow; background: black')
 
     // warning!
+    console.warn('Cheese might be moldy.')
 
     // Error :|
+    console.error('Cheese is fucken moldy!')
 
     // Info
+    console.info('Some cheese kinds are yellow.')
 
     // Testing
+    const p = document.querySelector('p')
+    console.assert(p.classList.contains('cheese'), 'No cheese on p.')
 
     // clearing
+    // Don't wanna clear console when trying to see output
+    // console.clear()
 
     // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old`)
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`)
+      console.groupEnd(`${dog.name}`)
+    })
 
     // counting
+    console.count('cheese')
+    console.count('cotija')
+    console.count('cheese')
+    console.count('cotija')
+    console.count('cheese')
+    console.count('cheese')
+    console.count('cotija')
+    console.count('cheese')
 
     // timing
+    console.time('fetching data')
+    fetch('https://api.github.com/users/jvtrigueros')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data')
+        console.log(data)
+      })
+
 
   </script>
 </body>
