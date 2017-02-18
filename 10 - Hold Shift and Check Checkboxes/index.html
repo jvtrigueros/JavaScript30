@@ -110,11 +110,27 @@
   document.addEventListener('keydown', event => isMultiSelect = event.shiftKey ? true : isMultiSelect)
   document.addEventListener('keyup', event => isMultiSelect = event.which === 16 ? false : isMultiSelect)
 
-  inputs.forEach(input => {
-    input.addEventListener('mousedown', event => {
-      const checkedInputs = inputs.filter(input => input.checked)
+  inputs.forEach((input, idx, inputs) => input.addEventListener('mouseup', handleInputClick.bind(input, idx, inputs)))
+
+  function handleInputClick (index, inputs, event) {
+    if (isMultiSelect) {
+      const checkedIndex = inputs.findIndex(input => input.checked)
+
+      if(index < checkedIndex)
+        checkInputs(inputs, index, checkedIndex)
+      else
+        checkInputs(inputs, checkedIndex, index)
+
+      this.checked = false
+    }
+  }
+
+  function checkInputs (inputs, start, end) {
+    inputs.forEach((input, index) => {
+      if(start <= index && index <= end)
+        input.checked = true
     })
-  })
+  }
 </script>
 </body>
 </html>
