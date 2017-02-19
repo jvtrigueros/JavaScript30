@@ -104,6 +104,58 @@
   </div>
 
 <script>
+  /** Initial solution
+  const inputs = Array.from(document.querySelectorAll('input'))
+  let isMultiSelect = false
+
+  document.addEventListener('keydown', event => isMultiSelect = event.shiftKey ? true : isMultiSelect)
+  document.addEventListener('keyup', event => isMultiSelect = event.which === 16 ? false : isMultiSelect)
+
+  inputs.forEach((input, idx, inputs) => input.addEventListener('mouseup', handleInputClick.bind(input, idx, inputs)))
+
+  function handleInputClick (index, inputs, event) {
+    if (isMultiSelect) {
+      const checkedIndex = inputs.findIndex(input => input.checked)
+
+      if(index < checkedIndex)
+        checkInputs(inputs, index, checkedIndex)
+      else
+        checkInputs(inputs, checkedIndex, index)
+
+      this.checked = false
+    }
+  }
+
+  function checkInputs (inputs, start, end) {
+    inputs.forEach((input, index) => {
+      if(start <= index && index <= end)
+        input.checked = true
+    })
+  }
+  **/
+
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck))
+
+  let lastChecked;
+
+  function handleCheck (event) {
+    let inBetween = false
+
+    if (event.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween
+        }
+
+        if (inBetween) {
+          checkbox.checked = true
+        }
+      })
+    }
+
+    lastChecked = this
+  }
 </script>
 </body>
 </html>
