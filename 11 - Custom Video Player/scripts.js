@@ -1,12 +1,11 @@
-const player = document.querySelector('video.player__video.viewer')
-
+const player = document.querySelector('.viewer')
 const playerControl = document.querySelector('.player__controls')
-const playButton = playerControl.querySelector('button.player__button[title="Toggle Play"]')
+const playButton = playerControl.querySelector('.toggle')
 const volumeSlider = playerControl.querySelector('input[name=volume].player__slider')
 const playbackSlider = playerControl.querySelector('input[name=playbackRate].player__slider')
-const dataSkipButtons = playerControl.querySelectorAll('button.player__button')
+const dataSkipButtons = playerControl.querySelectorAll('[data-skip]')
 
-const scrobbler = playerControl.querySelector('.progress')
+const progress = playerControl.querySelector('.progress')
 
 let isPlaying = false
 let isScrobbling = false
@@ -22,10 +21,10 @@ playbackSlider.addEventListener('mousemove', handlePlayback)
 
 dataSkipButtons.forEach(button => button.addEventListener('click', handleSkip))
 
-scrobbler.addEventListener('click', handleScrobbler)
-scrobbler.addEventListener('mousemove', handleScrobbler)
-scrobbler.addEventListener('mousedown', () => isScrobbling = true)
-scrobbler.addEventListener('mouseup', () => isScrobbling = false)
+progress.addEventListener('click', handleScrobbler)
+progress.addEventListener('mousemove', handleScrobbler)
+progress.addEventListener('mousedown', () => isScrobbling = true)
+progress.addEventListener('mouseup', () => isScrobbling = false)
 
 function handlePlayClick (event) {
   if (!isPlaying) {
