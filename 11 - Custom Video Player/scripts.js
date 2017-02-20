@@ -6,6 +6,8 @@ const volumeSlider = playerControl.querySelector('input[name=volume].player__sli
 const playbackSlider = playerControl.querySelector('input[name=playbackRate].player__slider')
 const dataSkipButtons = playerControl.querySelectorAll('button.player__button')
 
+const scrobbler = playerControl.querySelector('.progress__filled')
+
 let isPlaying = false
 
 player.addEventListener('click', handlePlayClick)
@@ -41,6 +43,15 @@ function handlePlayback (event) {
 }
 
 function handleSkip (event) {
-  if(this.dataset.skip)
+  if(this.dataset.skip) {
     player.currentTime += parseInt(this.dataset.skip)
+    updateProgress()
+  }
 }
+
+function updateProgress () {
+  const progress = (player.currentTime / player.duration) * 100.0
+  document.documentElement.style.setProperty('--progress', progress + '%')
+}
+
+setInterval(updateProgress, 1000)

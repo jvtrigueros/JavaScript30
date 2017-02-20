@@ -1,3 +1,7 @@
+:root {
+  --progress: 0;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -100,7 +104,7 @@ body {
   width:50%;
   background:#ffc600;
   flex:0;
-  flex-basis:50%;
+  flex-basis: var(--progress);
 }
 
 /* unholy css to style input type="range" */
