@@ -1,8 +1,7 @@
 const player = document.querySelector('.viewer')
 const playerControl = document.querySelector('.player__controls')
 const playButton = playerControl.querySelector('.toggle')
-const volumeSlider = playerControl.querySelector('input[name=volume].player__slider')
-const playbackSlider = playerControl.querySelector('input[name=playbackRate].player__slider')
+const sliders = playerControl.querySelectorAll('.player__slider')
 const dataSkipButtons = playerControl.querySelectorAll('[data-skip]')
 
 const progress = playerControl.querySelector('.progress')
@@ -13,11 +12,10 @@ let isScrobbling = false
 player.addEventListener('click', handlePlayClick)
 playButton.addEventListener('click', handlePlayClick)
 
-volumeSlider.addEventListener('change', handleVolume)
-volumeSlider.addEventListener('mousemove', handleVolume)
-
-playbackSlider.addEventListener('change', handlePlayback)
-playbackSlider.addEventListener('mousemove', handlePlayback)
+sliders.forEach(slider => {
+  slider.addEventListener('change', handleSlider)
+  slider.addEventListener('mousemove', handleSlider)
+})
 
 dataSkipButtons.forEach(button => button.addEventListener('click', handleSkip))
 
@@ -39,12 +37,8 @@ function handlePlayClick (event) {
   isPlaying = !isPlaying
 }
 
-function handleVolume (event) {
-  player.volume = this.value
-}
-
-function handlePlayback (event) {
-  player.playbackRate = this.value
+function handleSlider (event) {
+  player[this.name] = this.value
 }
 
 function handleSkip (event) {
