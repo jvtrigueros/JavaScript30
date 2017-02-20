@@ -1,6 +1,7 @@
 const player = document.querySelector('.viewer')
 const playerControl = document.querySelector('.player__controls')
 const playButton = playerControl.querySelector('.toggle')
+const fullscreenButton = playerControl.querySelector('.fullscreen')
 const sliders = playerControl.querySelectorAll('.player__slider')
 const dataSkipButtons = playerControl.querySelectorAll('[data-skip]')
 
@@ -14,6 +15,7 @@ player.addEventListener('play', updatePlayButton)
 player.addEventListener('pause', updatePlayButton)
 player.addEventListener('timeupdate', updateProgress)
 playButton.addEventListener('click', togglePlay)
+fullscreenButton.addEventListener('click', toggleFullscreen)
 
 sliders.forEach(slider => {
   slider.addEventListener('change', handleSlider)
@@ -59,4 +61,23 @@ function handleScrobbler (event) {
 function updateProgress () {
   const progress = (player.currentTime / player.duration) * 100.0
   document.documentElement.style.setProperty('--progress', progress + '%')
+}
+
+/**
+ * Source: https://developer.mozilla.org/samples/domref/fullscreen.html
+ */
+function toggleFullscreen () {
+  if (!document.mozFullScreen && !document.webkitFullScreen) {
+    if (player.mozRequestFullScreen) {
+      player.mozRequestFullScreen();
+    } else {
+      player.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else {
+      document.webkitCancelFullScreen();
+    }
+  }
 }
