@@ -14,7 +14,7 @@ This is my take on the JavaScript 30 Day Challenge. I'll be checking these out a
 - [x] [Fun with HTML5 Canvas](./08 - Fun with HTML5 Canvas/index.html)
 - [x] [Dev Tools Domination](./09 - Dev Tools Domination/index.html)
 - [x] [Hold Shift and Check Checkboxes](./10 - Hold Shift and Check Checkboxes/index.html)
-- [ ] [Custom Video Player](./11 - Custom Video Player/index.html)
+- [x] [Custom Video Player](./11 - Custom Video Player/index.html)
 - [ ] [Key Sequence Detection](./12 - Key Sequence Detection/index.html)
 - [ ] [Slide in on Scroll](./13 - Slide in on Scroll/index.html)
 - [ ] [JavaScript References VS Copying](./14 - JavaScript References VS Copying/index.html)
