@@ -10,6 +10,8 @@ let isPlaying = false
 let isScrobbling = false
 
 player.addEventListener('click', togglePlay)
+player.addEventListener('play', updatePlayButton)
+player.addEventListener('pause', updatePlayButton)
 playButton.addEventListener('click', togglePlay)
 
 sliders.forEach(slider => {
@@ -27,12 +29,14 @@ progress.addEventListener('mouseup', () => isScrobbling = false)
 function togglePlay (event) {
   if (player.paused) {
     player.play()
-    playButton.innerHTML = '❚❚'
   }
   else {
     player.pause()
-    playButton.innerHTML = '►'
   }
+}
+
+function updatePlayButton (event) {
+    playButton.textContent = this.paused ? '►' : '❚❚'
 }
 
 function handleSlider (event) {
