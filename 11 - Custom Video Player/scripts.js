@@ -12,6 +12,7 @@ let isScrobbling = false
 player.addEventListener('click', togglePlay)
 player.addEventListener('play', updatePlayButton)
 player.addEventListener('pause', updatePlayButton)
+player.addEventListener('timeupdate', updateProgress)
 playButton.addEventListener('click', togglePlay)
 
 sliders.forEach(slider => {
@@ -22,7 +23,7 @@ sliders.forEach(slider => {
 dataSkipButtons.forEach(button => button.addEventListener('click', handleSkip))
 
 progress.addEventListener('click', handleScrobbler)
-progress.addEventListener('mousemove', handleScrobbler)
+progress.addEventListener('mousemove', event => isScrobbling && handleScrobbler(event))
 progress.addEventListener('mousedown', () => isScrobbling = true)
 progress.addEventListener('mouseup', () => isScrobbling = false)
 
@@ -51,15 +52,11 @@ function handleSkip (event) {
 }
 
 function handleScrobbler (event) {
-  if(isScrobbling) {
-    player.currentTime = (event.offsetX / this.offsetWidth) * player.duration
-    updateProgress()
-  }
+  player.currentTime = (event.offsetX / progress.offsetWidth) * player.duration
+  updateProgress()
 }
 
 function updateProgress () {
   const progress = (player.currentTime / player.duration) * 100.0
   document.documentElement.style.setProperty('--progress', progress + '%')
 }
-
-setInterval(() => (!player.seeking) && updateProgress(), 1000)
