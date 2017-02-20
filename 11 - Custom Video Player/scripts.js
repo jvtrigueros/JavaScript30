@@ -1,5 +1,6 @@
 const player = document.querySelector('video.player__video.viewer')
-const playButton = document.querySelector('button.player__button')
+const playerControl = document.querySelector('.player__controls')
+const playButton = playerControl.querySelector('button.player__button')
 
 let isPlaying = false
 
