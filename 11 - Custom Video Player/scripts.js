@@ -9,8 +9,8 @@ const progress = playerControl.querySelector('.progress')
 let isPlaying = false
 let isScrobbling = false
 
-player.addEventListener('click', handlePlayClick)
-playButton.addEventListener('click', handlePlayClick)
+player.addEventListener('click', togglePlay)
+playButton.addEventListener('click', togglePlay)
 
 sliders.forEach(slider => {
   slider.addEventListener('change', handleSlider)
@@ -24,8 +24,8 @@ progress.addEventListener('mousemove', handleScrobbler)
 progress.addEventListener('mousedown', () => isScrobbling = true)
 progress.addEventListener('mouseup', () => isScrobbling = false)
 
-function handlePlayClick (event) {
-  if (!isPlaying) {
+function togglePlay (event) {
+  if (player.paused) {
     player.play()
     playButton.innerHTML = '❚❚'
   }
@@ -33,8 +33,6 @@ function handlePlayClick (event) {
     player.pause()
     playButton.innerHTML = '►'
   }
-
-  isPlaying = !isPlaying
 }
 
 function handleSlider (event) {
