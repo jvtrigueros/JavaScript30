@@ -6,9 +6,10 @@ const volumeSlider = playerControl.querySelector('input[name=volume].player__sli
 const playbackSlider = playerControl.querySelector('input[name=playbackRate].player__slider')
 const dataSkipButtons = playerControl.querySelectorAll('button.player__button')
 
-const scrobbler = playerControl.querySelector('.progress__filled')
+const scrobbler = playerControl.querySelector('.progress')
 
 let isPlaying = false
+let isScrobbling = false
 
 player.addEventListener('click', handlePlayClick)
 playButton.addEventListener('click', handlePlayClick)
@@ -20,6 +21,11 @@ playbackSlider.addEventListener('change', handlePlayback)
 playbackSlider.addEventListener('mousemove', handlePlayback)
 
 dataSkipButtons.forEach(button => button.addEventListener('click', handleSkip))
+
+scrobbler.addEventListener('click', handleScrobbler)
+scrobbler.addEventListener('mousemove', handleScrobbler)
+scrobbler.addEventListener('mousedown', () => isScrobbling = true)
+scrobbler.addEventListener('mouseup', () => isScrobbling = false)
 
 function handlePlayClick (event) {
   if (!isPlaying) {
@@ -49,9 +55,16 @@ function handleSkip (event) {
   }
 }
 
+function handleScrobbler (event) {
+  if(isScrobbling) {
+    player.currentTime = (event.offsetX / this.offsetWidth) * player.duration
+    updateProgress()
+  }
+}
+
 function updateProgress () {
   const progress = (player.currentTime / player.duration) * 100.0
   document.documentElement.style.setProperty('--progress', progress + '%')
 }
 
-setInterval(updateProgress, 1000)
+setInterval(() => (!player.seeking) && updateProgress(), 1000)
